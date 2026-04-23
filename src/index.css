@@ -2,95 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ================================================================
+   TINTICO — Sistema de diseño editorial premium
+   Paleta híbrida: espresso atmosphere + boutique claro
+   Todos los colores en HSL.
+   ================================================================ */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* —— Boutique claro (default / shop / producto) —— */
+    --background: 38 30% 95%;            /* ivory cálido #f5f1ea */
+    --foreground: 24 25% 12%;            /* espresso profundo */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 38 35% 97%;
+    --card-foreground: 24 25% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 38 35% 97%;
+    --popover-foreground: 24 25% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 24 28% 14%;               /* espresso */
+    --primary-foreground: 38 35% 95%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 32 22% 88%;             /* beige latte */
+    --secondary-foreground: 24 25% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 34 18% 90%;
+    --muted-foreground: 24 12% 38%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 18 55% 45%;                /* terracota */
+    --accent-foreground: 38 35% 97%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --gold: 38 45% 52%;                  /* oro tenue */
+    --gold-foreground: 24 28% 14%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 38 35% 97%;
 
-    --radius: 0.5rem;
+    --border: 30 15% 82%;
+    --input: 30 15% 82%;
+    --ring: 24 28% 14%;
 
-    --sidebar-background: 0 0% 98%;
+    --radius: 0.25rem;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* —— Tokens espresso atmosphere (secciones oscuras) —— */
+    --espresso: 22 30% 8%;               /* #1a1410 */
+    --espresso-soft: 22 22% 14%;
+    --espresso-elevated: 22 18% 18%;
+    --cream: 36 40% 92%;                 /* texto sobre oscuro */
+    --cream-muted: 32 18% 70%;
+    --terracotta: 18 55% 52%;
+    --gold-warm: 38 50% 58%;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* —— Gradientes y sombras editoriales —— */
+    --gradient-espresso: linear-gradient(180deg, hsl(22 30% 8%) 0%, hsl(22 25% 5%) 100%);
+    --gradient-fade-dark: linear-gradient(180deg, hsl(22 30% 8% / 0) 0%, hsl(22 30% 8% / 0.85) 60%, hsl(22 30% 8%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(38 30% 95%) 0%, hsl(32 22% 88%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 50% 58%), hsl(18 55% 52%));
 
-    --sidebar-primary-foreground: 0 0% 98%;
+    --shadow-luxury: 0 30px 80px -20px hsl(22 30% 8% / 0.25);
+    --shadow-card: 0 1px 2px hsl(22 30% 8% / 0.04), 0 8px 24px -8px hsl(22 30% 8% / 0.08);
+    --shadow-card-hover: 0 4px 8px hsl(22 30% 8% / 0.06), 0 24px 48px -12px hsl(22 30% 8% / 0.18);
 
-    --sidebar-accent: 240 4.8% 95.9%;
+    --transition-luxury: cubic-bezier(0.22, 1, 0.36, 1);
+    --transition-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 38 30% 95%;
+    --sidebar-foreground: 24 25% 12%;
+    --sidebar-primary: 24 28% 14%;
+    --sidebar-primary-foreground: 38 35% 95%;
+    --sidebar-accent: 34 18% 90%;
+    --sidebar-accent-foreground: 24 25% 12%;
+    --sidebar-border: 30 15% 82%;
+    --sidebar-ring: 24 28% 14%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  .dark,
+  .espresso {
+    --background: 22 30% 8%;
+    --foreground: 36 40% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 22 25% 11%;
+    --card-foreground: 36 40% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 22 25% 11%;
+    --popover-foreground: 36 40% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 36 40% 92%;
+    --primary-foreground: 22 30% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 22 18% 18%;
+    --secondary-foreground: 36 40% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 22 15% 16%;
+    --muted-foreground: 32 18% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 18 55% 52%;
+    --accent-foreground: 22 30% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 22 15% 20%;
+    --input: 22 15% 20%;
+    --ring: 36 40% 92%;
   }
 }
 
@@ -99,7 +110,80 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  ::selection {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+}
+
+@layer components {
+  .container-editorial {
+    @apply mx-auto w-full max-w-[1480px] px-6 md:px-10 lg:px-16;
+  }
+
+  .eyebrow {
+    @apply inline-block text-[11px] font-medium uppercase tracking-[0.28em] text-muted-foreground;
+  }
+
+  .display-xl {
+    @apply font-serif font-light leading-[0.95] tracking-[-0.02em];
+    font-size: clamp(2.75rem, 7vw, 6.5rem);
+  }
+
+  .display-lg {
+    @apply font-serif font-light leading-[1] tracking-[-0.015em];
+    font-size: clamp(2.25rem, 5vw, 4.5rem);
+  }
+
+  .display-md {
+    @apply font-serif font-light leading-[1.05] tracking-[-0.01em];
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+  }
+
+  .lead {
+    @apply text-lg md:text-xl font-light leading-relaxed text-muted-foreground;
+  }
+
+  .link-underline {
+    @apply relative inline-block after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-bottom-right after:scale-x-0 after:bg-current after:transition-transform after:duration-500 hover:after:origin-bottom-left hover:after:scale-x-100;
+    transition: color 0.3s var(--transition-luxury);
+  }
+
+  .btn-luxury {
+    @apply inline-flex items-center justify-center gap-3 px-8 py-4 text-[12px] font-medium uppercase tracking-[0.22em] transition-all duration-500;
+    transition-timing-function: var(--transition-luxury);
+  }
+
+  .grain-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/></svg>");
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .font-serif {
+    font-family: "Fraunces", "Playfair Display", Georgia, serif;
+  }
+  .font-sans {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
   }
 }
